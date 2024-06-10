@@ -6,7 +6,7 @@ Monitoring NtCreateFile Calls On DLLs To Find Possible Dll Hijacking Vulnerabili
 
 ## Technical Explanation
 
-Alot of applications nowadays will check if a specific file in a specific directory exists, Whether that be a configuration file or an executable file or a **DLL** file, These checks are done by using **CreateFileA** / **CreateFileW** which all come down to the NTAPI function of **NtCreateFile**, IoMon will hook NtCreateFile and check for file names ending with **.dll**, Then will show you the file's **IoStatus->Information** which indicates if the file exists or does not exist, Consult the **MSDN** documentation for more information about **NtCreateFile**.
+Alot of applications nowadays will check if a specific file in a specific directory exists, Whether that be a configuration file or an executable file or a **DLL** file, These checks are done by using **CreateFileA** / **CreateFileW** which all come down to the NTAPI function of **NtCreateFile**, IoMon will hook NtCreateFile and check for file names ending with **.dll**, Then will show you the file's **IoStatusBlock->Information** which indicates if the file exists or does not exist, Consult the **MSDN** documentation for more information about **NtCreateFile**.
 
 
 ## Resources
